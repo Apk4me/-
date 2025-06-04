@@ -1,84 +1,99 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Win Rewards</title>
+  <title>اربح مليون دينار تونسي!</title>
   <style>
     body {
-      background-image: url('https://i.imgur.com/0Zf8WZt.jpg'); /* صورة خلفية */
-      background-size: cover;
-      background-position: center;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
       margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cairo', sans-serif;
+      color: white;
+      text-align: center;
     }
-    .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 40px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      display: inline-block;
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     h1 {
-      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    #countdown {
-      font-size: 26px;
-      color: #c0392b;
-      margin: 20px 0;
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
-    #continue-btn {
-      display: none;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #e67e22;
-      color: white;
+    .countdown {
+      font-size: 1.4em;
+      color: #ffd700;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type="email"], input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
+      font-size: 1em;
+      text-align: right;
     }
-    #continue-btn:hover {
-      background-color: #d35400;
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.2em;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <h1>اربح مليون دينار تونسي!</h1>
+    <p>أدخل بريدك الإلكتروني والرمز البريدي للمشاركة. العرض محدود!</p>
+    <div class="countdown" id="countdown">ينتهي العرض خلال: 02:00</div>
+    <form onsubmit="redirectToOffer(event)">
+      <input type="email" placeholder="ادخل بريدك الإلكتروني" required />
+      <input type="text" placeholder="ادخل الرمز البريدي" required />
+      <button type="submit">شارك الآن واربح!</button>
+    </form>
+  </div>
 
-<div class="container">
-  <h1>🎁 Click to Win Real Money Online!</h1>
-  <p>Prepare to claim your reward...</p>
-  <div id="countdown">10</div>
-  <a id="continue-btn" href="https://popcash.net/world/go/489377/738925/" target="_blank">انقر لتربح</a>
-</div>
+  <script>
+    // عد تنازلي
+    let timer = 120;
+    const countdownEl = document.getElementById("countdown");
+    setInterval(() => {
+      if (timer > 0) {
+        timer--;
+        const minutes = String(Math.floor(timer / 60)).padStart(2, '0');
+        const seconds = String(timer % 60).padStart(2, '0');
+        countdownEl.textContent = `ينتهي العرض خلال: ${minutes}:${seconds}`;
+      }
+    }, 1000);
 
-<!-- PopCash Code -->
-<script type="text/javascript">
-  var uid = "489377";
-  var pop_fallback = "on";
-  var pop_tag = document.createElement("script");
-  pop_tag.src = "https://c1.popcash.net/pop.js";
-  document.head.appendChild(pop_tag);
-</script>
-
-<script>
-  let countdown = 10;
-  const countdownEl = document.getElementById("countdown");
-  const button = document.getElementById("continue-btn");
-
-  const interval = setInterval(() => {
-    countdown--;
-    countdownEl.textContent = countdown;
-    if (countdown <= 0) {
-      clearInterval(interval);
-      countdownEl.style.display = "none";
-      button.style.display = "inline-block";
+    // تحويل إلى رابط CPA
+    function redirectToOffer(event) {
+      event.preventDefault();
+      window.location.href = "https://doctoredits.com/1812446";
     }
-  }, 1000);
-</script>
-
+  </script>
 </body>
 </html>
