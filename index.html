@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Win Rewards</title>
+  <style>
+    body {
+      background-image: url('https://i.imgur.com/0Zf8WZt.jpg'); /* صورة خلفية */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      margin: 0;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    #countdown {
+      font-size: 26px;
+      color: #c0392b;
+      margin: 20px 0;
+    }
+    #continue-btn {
+      display: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    #continue-btn:hover {
+      background-color: #d35400;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎁 Click to Win Real Money Online!</h1>
+  <p>Prepare to claim your reward...</p>
+  <div id="countdown">10</div>
+  <a id="continue-btn" href="https://popcash.net/world/go/489377/738925/" target="_blank">انقر لتربح</a>
+</div>
+
+<!-- PopCash Code -->
+<script type="text/javascript">
+  var uid = "489377";
+  var pop_fallback = "on";
+  var pop_tag = document.createElement("script");
+  pop_tag.src = "https://c1.popcash.net/pop.js";
+  document.head.appendChild(pop_tag);
+</script>
+
+<script>
+  let countdown = 10;
+  const countdownEl = document.getElementById("countdown");
+  const button = document.getElementById("continue-btn");
+
+  const interval = setInterval(() => {
+    countdown--;
+    countdownEl.textContent = countdown;
+    if (countdown <= 0) {
+      clearInterval(interval);
+      countdownEl.style.display = "none";
+      button.style.display = "inline-block";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
