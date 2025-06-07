@@ -1,111 +1,56 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>اربح 1000 دينار تونسي!</title>
-
-  <!-- 🔗 صورة معاينة عند مشاركة الرابط -->
-  <meta property="og:title" content="فرصتك لربح 1000 دينار تونسي!" />
-  <meta property="og:description" content="سجّل الآن ببريدك وادخل السحب الكبير على 1000 دينار!" />
-  <meta property="og:image" content="https://i.imgur.com/NFbZm5A.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <meta charset="UTF-8">
+  <title>اربح 1000 دينار تونسي</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Cairo', sans-serif;
-      color: white;
+      background-color: #f8f9fa;
+      font-family: sans-serif;
       text-align: center;
+      padding: 50px;
+      direction: rtl;
     }
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px 20px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      color: #28a745;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .countdown {
-      font-size: 1.4em;
-      color: #ffd700;
-      margin-bottom: 30px;
-    }
-    form {
-      max-width: 400px;
-      margin: auto;
-    }
-    input[type="email"], input[type="text"] {
-      width: 100%;
-      padding: 12px;
+    input, button {
       margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-      font-size: 1em;
-      text-align: right;
+      padding: 10px;
+      width: 90%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
     }
     button {
-      width: 100%;
-      padding: 14px;
-      font-size: 1.2em;
       background-color: #28a745;
-      border: none;
       color: white;
-      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background-color: #218838;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <!-- 🎵 مشغل الصوت -->
-  <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/16/audio_5fbc44d26f.mp3?filename=motivational-success-epic-11254.mp3" type="audio/mp3">
-    متصفحك لا يدعم تشغيل الصوت.
-  </audio>
-
-  <div class="overlay">
+  <div class="box">
     <h1>اربح 1000 دينار تونسي!</h1>
-    <p>أدخل بريدك الإلكتروني والرمز البريدي للمشاركة. العرض محدود!</p>
-    <div class="countdown" id="countdown">ينتهي العرض خلال: 02:00</div>
+    <p>أدخل بريدك الإلكتروني والرمز البريدي للمشاركة</p>
     <form onsubmit="redirectToOffer(event)">
-      <input type="email" placeholder="ادخل بريدك الإلكتروني" required />
-      <input type="text" placeholder="ادخل الرمز البريدي" required />
-      <button type="submit">شارك الآن واربح!</button>
+      <input type="email" placeholder="البريد الإلكتروني" required><br>
+      <input type="text" placeholder="الرمز البريدي" required><br>
+      <button type="submit">اشترك الآن</button>
     </form>
   </div>
 
   <script>
-    // عد تنازلي
-    let timer = 120;
-    const countdownEl = document.getElementById("countdown");
-    setInterval(() => {
-      if (timer > 0) {
-        timer--;
-        const minutes = String(Math.floor(timer / 60)).padStart(2, '0');
-        const seconds = String(timer % 60).padStart(2, '0');
-        countdownEl.textContent = `ينتهي العرض خلال: ${minutes}:${seconds}`;
-      }
-    }, 1000);
-
-    // تحويل إلى رابط CPA
-    function redirectToOffer(event) {
-      event.preventDefault();
+    function redirectToOffer(e) {
+      e.preventDefault();
       window.location.href = "https://doctoredits.com/1812446";
     }
   </script>
